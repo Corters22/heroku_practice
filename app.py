@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 
 url = f'postgresql://{user}:{password}@localhost:{port}/{db}'
-engine = create_engine(url)
+engine = create_engine(uri)
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 
 db = SQLAlchemy(app)
@@ -89,7 +89,11 @@ schema = FootballSchema(many=True)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('base.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
