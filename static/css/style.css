@@ -110,7 +110,7 @@
     padding: 20px;
     margin: 0;
     background: black;
-    background-image: url("/images/championship_pic.png");
+    background-image: url("images/championship_pic.png");
     background-attachment: fixed;
     background-position: bottom center;
     background-size: cover;
