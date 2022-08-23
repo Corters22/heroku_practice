@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, jsonify
 import pandas as pd
-from functions import Game_Data
+import functions
 
 
 app = Flask(__name__)
