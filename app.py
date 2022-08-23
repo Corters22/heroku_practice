@@ -12,10 +12,11 @@ app = Flask(__name__)
 
 @app.route('/logout')
 def index():
-    data = Game_Data.full_data()
+    # data = Game_Data.full_data()
     
-    return render_template('home.html',column_names = data.columns.values, 
-            row_data = list(data.values.tolist()), zip = zip)
+    # return render_template('home.html',column_names = data.columns.values, 
+    #         row_data = list(data.values.tolist()), zip = zip)
+    return render_template('home.html')
 
 @app.route('/')
 def home():
