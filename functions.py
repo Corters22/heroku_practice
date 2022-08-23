@@ -3,10 +3,10 @@ import pandas as pd
 
 
 ##create database connection to existing data
-engine=create_engine('sqlite:///parish_data.db', echo=True)
+engine=create_engine('sqlite:///heroku_practice/parish_data.db', echo=True)
 sqlite_connection = engine.connect()
 
-file = pd.read_excel('Aledo_vs_Timberview_102521.xlsx')
+file = pd.read_excel("heroku_practice/Aledo_vs_Timberview_102521.xlsx")
 
 sqlite_table = "Football"
 file.to_sql(sqlite_table, sqlite_connection, if_exists='append', index=False)

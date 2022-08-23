@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, flash
+from flask import Flask, render_template, request, url_for, redirect, flash, jsonify
 import pandas as pd
 from functions import Game_Data
 
@@ -7,14 +7,17 @@ app = Flask(__name__)
 
 #connect to database
 
-data=Game_Data
+#data=Game_Data
 
 
 @app.route('/logout')
 def index():
-    return data.full_data()
+    data = Game_Data.full_data()
+    
+    return render_template('home.html',column_names = data.columns.values, 
+            row_data = list(data.values.tolist()), zip = zip)
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('home.html')
 
